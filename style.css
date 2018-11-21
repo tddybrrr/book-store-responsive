@@ -1,4 +1,8 @@
-
+img{
+    width: 200px;
+    height: 300px;
+    
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -9,6 +13,7 @@ body {
   width: 300px;
   height: 300px;
   perspective: 1000px;
+  
 }
 
 .flip-card-inner {
