@@ -1,27 +1,60 @@
-button {
-    color: white;
-    background-color: black;
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: dimgrey;
+    opacity: 1; /* Firefox */
+    font-family: Product Sans;
+}
+h3{
+   font-style: italic;
 }
 
+
+#storeName {
+    color: dimgrey;
+    letter-spacing: 2.5px;
+    font-family: Product Sans;
+}
+a {
+    color: white;
+    font-family: Product Sans;
+}
+a:hover {
+    color: grey;
+}
+#logo {
+    width: 60px;
+    height: 60px;
+}
+input {
+    border-radius: 10px;
+    border-style: solid;
+    
+}
+nav {
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
 img {
     width: 200px;
     height: 300px;
     background-color: black;
+    border-radius: 10px;
     padding: 10px 10px;
 }
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .flip-card {
     background-color: transparent;
-    width: 300px;
+    width: 250px;
     height: 300px;
-    perspective: 1000px;
+    perspective: 1500px;
     margin: 10px
 }
-
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -29,13 +62,10 @@ body {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
-
 .flip-card-front,
 .flip-card-back {
     position: absolute;
@@ -43,17 +73,21 @@ body {
     height: 100%;
     backface-visibility: hidden;
 }
-
 .flip-card-front {
-    background-color: #bbb;
+    background-color: white;
     color: black;
     z-index: 2;
 }
-
 .flip-card-back {
-    background-color: #343a40;
+    background-color: black;
+    padding: 0px 10px;
     color: white;
+    border-radius: 10px;
     transform: rotateY(180deg);
     z-index: 1;
-    font-family: monospace;
+    font-family: Product Sans;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

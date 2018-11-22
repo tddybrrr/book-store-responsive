@@ -11,21 +11,16 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-            <a class="navbar-brand" href="#">LOGO HERE!!</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/cliparts/d/b/0/1/1207431622846796151bookstore book store white.svg.thumb.png"><img id="logo" src="book-logo.png" alt='logo' /></a>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            Genres
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Action</a>
@@ -35,24 +30,19 @@
                         </div>
                     </li>
                 </ul>
-                    <input type="text" id="myInput" onkeyup="bookSearch()" placeholder="Search for names..">
-<!--                    <button type="submit" onclick="">search for da book</button>-->
+                <h2 id="storeName" class="text-center">Crooked Pages Bookstore</h2>
+                <input type="text" id="myInput" onkeyup="bookSearch()" placeholder="  Find books...">
             </div>
         </nav>
-
-        <h1 class="text-center">Unfiltered Pages Book Store !</h1>
-
         <div class="row">
             <div id="bookZone" class="offset-md-1 col-sm-11 d-flex flex-wrap">
             </div>
         </div>
-
     </div>
 
     <script src="power.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
 </body>
 </html>

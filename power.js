@@ -6,13 +6,11 @@ function generateBooks() {
         .then(function (data) {
 
             var allBooks = data.books;
-
             var covers = allBooks.map(book => book.portada);
             var titles = allBooks.map(book => book.titulo);
             var abouts = allBooks.map(book => book.descripcion);
 
             generateCover(covers, titles, abouts)
-
         });
 }
 
@@ -20,7 +18,7 @@ function generateCover(arrayOfUrls, arrayOfTitles, arrayOfAbouts) {
 
     var bookZone = document.getElementById("bookZone")
 
-    for (var i = 0; i < 24; i++) {
+    for (var i = 0; i < arrayOfUrls.length; i++) {
 
         var image = document.createElement("img")
         image.src = arrayOfUrls[i]
@@ -51,18 +49,16 @@ function generateCover(arrayOfUrls, arrayOfTitles, arrayOfAbouts) {
 }
 
 function bookSearch() {
-
     var descriptions = document.querySelectorAll("p")
     var titles = document.querySelectorAll("h3")
     var input = document.getElementById("myInput");
     var filter = input.value.toUpperCase();
-
     for (var i = 0; i < descriptions.length; i++) {
         if (descriptions[i].innerHTML.toUpperCase().indexOf(filter) > -1 || titles[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
             document.getElementById("book" + i).style.display = "initial"
         } else {
             document.getElementById("book" + i).style.display = "none";
-        } 
+        }
     }
 }
 
