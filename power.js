@@ -36,8 +36,6 @@ function generateCover(arrayOfUrls, arrayOfTitles) {
         var flipCardBack = document.createElement("div")
         flipCardBack.className = "flip-card-back"
 
-
-
         allBooks.appendChild(flipCard)
         flipCard.appendChild(flipCardInner)
         flipCardInner.appendChild(flipCardFront)
@@ -48,4 +46,20 @@ function generateCover(arrayOfUrls, arrayOfTitles) {
     }
 }
 
+function bookSearch(){
+    
+    var descriptions = document.querySelectorAll("p")
+    var input = document.getElementById("myInput");
+    var filter = input.value.toUpperCase();
+    for (var i =0; i < descriptions.length; i++){
+        
+        console.log(descriptions[i])
+    }
+    var searchResults = document.createElement("p")
+    
+    
+    
+}
+
+bookSearch()
 generateBooks()
