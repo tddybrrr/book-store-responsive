@@ -4,31 +4,35 @@ function generateBooks() {
             return response.json();
         })
         .then(function (data) {
+
             var allBooks = data.books;
 
             var covers = allBooks.map(book => book.portada);
             var titles = allBooks.map(book => book.titulo);
+            var abouts = allBooks.map(book => book.descripcion);
 
+            generateCover(covers, titles, abouts)
 
-            generateCover(covers, titles)
         });
 }
 
+function generateCover(arrayOfUrls, arrayOfTitles, arrayOfAbouts) {
 
-function generateCover(arrayOfUrls, arrayOfTitles) {
-
-    var allBooks = document.getElementById("allBooks")
+    var bookZone = document.getElementById("bookZone")
 
     for (var i = 0; i < 24; i++) {
 
         var image = document.createElement("img")
         image.src = arrayOfUrls[i]
 
+        var title = document.createElement("h3")
         var caption = document.createElement("p")
-        caption.innerHTML = arrayOfTitles[i]
+        title.innerHTML = arrayOfTitles[i]
+        caption.innerHTML = arrayOfAbouts[i]
 
         var flipCard = document.createElement("div")
         flipCard.className = "flip-card"
+        flipCard.setAttribute("id", ("book" + i))
         var flipCardInner = document.createElement("div")
         flipCardInner.className = "flip-card-inner"
         var flipCardFront = document.createElement("div")
@@ -36,30 +40,31 @@ function generateCover(arrayOfUrls, arrayOfTitles) {
         var flipCardBack = document.createElement("div")
         flipCardBack.className = "flip-card-back"
 
-        allBooks.appendChild(flipCard)
+        bookZone.appendChild(flipCard)
         flipCard.appendChild(flipCardInner)
         flipCardInner.appendChild(flipCardFront)
         flipCardInner.appendChild(flipCardBack)
         flipCardFront.appendChild(image)
+        flipCardBack.appendChild(title)
         flipCardBack.appendChild(caption)
-
     }
 }
 
-function bookSearch(){
-    
+function bookSearch() {
+
     var descriptions = document.querySelectorAll("p")
+    var titles = document.querySelectorAll("h3")
     var input = document.getElementById("myInput");
     var filter = input.value.toUpperCase();
-    for (var i =0; i < descriptions.length; i++){
-        
-        console.log(descriptions[i])
+
+    for (var i = 0; i < descriptions.length; i++) {
+        if (descriptions[i].innerHTML.toUpperCase().indexOf(filter) > -1 || titles[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            document.getElementById("book" + i).style.display = "initial"
+        } else {
+            document.getElementById("book" + i).style.display = "none";
+        } 
     }
-    var searchResults = document.createElement("p")
-    
-    
-    
 }
 
-bookSearch()
+
 generateBooks()
